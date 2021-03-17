@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    {% if enable %}
+        <header class="cabecalho">
+            <div class="container">
+                <h1 class="cabecalho_titulo">Contatos</h1>
+                <nav class="cabecalho_nav">
+                    <a class="cabecalho_nav__link" href="#">Home</a>
+                    <div class="cabecalho_dropdown">
+                        <button class="cabecalho_nav__link___login" >
+                            <img class="foto_perfil"  src="{{ url_for('static', filename='/images/avatar.png') }}" alt="foto de perfil">
+                        </button>
+
+                        <div class="cabecalho_dropdown__conteudo">
+                            <h2 class="seunome">Usuário</h2>
+                            <h3 class="seuemail">usuario@email.com</h3>
+                            <h3 class="logout"><a href="index.html">Sair</a></h3>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+    {% else %}
+        <header class="cabecalho">
+            <div class="container">
+                <h1 class="cabecalho_titulo">Contatos</h1>
+                <nav class="cabecalho_nav">
+                    <a class="cabecalho_nav__link" href="#">Home</a>
+                    <a class="cabecalho_nav__link___login" href="logado.html">--Login--</a>
+                </nav>
+            </div>
+        </header>
+
+    {% endif %}
+
+    {% block conteudo %} {% endblock %}
+
+</body>
+</html>

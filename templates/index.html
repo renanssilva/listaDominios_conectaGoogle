@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<main class="container_principal">
+    <section class="registro">
+        <h2 class="registro_titulo">Registre-se</h2>
+        <button class="registro_botao">
+            <img class="icone_google" src="{{ url_for('static', filename='/images/icone_google.png') }}"  alt="ícone do google">
+            <p class="login_google" ><a href="{{ url_for('google_login') }}">Login with Google</a></p>
+        </button>
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+    <main class="container_conta">
+        <div class="container_box">
+            <section class="dominios">
+                <h2 class="dominio">dominio.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+                
+            </section>
+            <section class="dominios">
+                <h2 class="dominio">dominio2.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+            </section>
+
+            <section class="dominios">
+                <h2 class="dominio">dominio2.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+            </section>
+
+            <section class="dominios">
+                <h2 class="dominio">dominio2.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+            </section>
+
+            <section class="dominios">
+                <h2 class="dominio">dominio2.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+            </section>
+
+            <section class="dominios">
+                <h2 class="dominio">dominio2.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+            </section>
+
+            <section class="dominios">
+                <h2 class="dominio">dominio2.com.br</h2>
+                <div class="contatos">
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                    <p>blabla.com</p>    
+                    <p>tana@nina.com</p>
+                    <p>teste@teste.com</p>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+
+    <script>
+        let click = document.querySelector('.cabecalho_nav__link___login');
+        let list = document.querySelector('.cabecalho_dropdown__conteudo');
+        click.addEventListener("click",()=>{
+            list.classList.toggle('newlist');
+        });
+    </script>
+
+    <footer></footer>
+    
+{% endblock %}
