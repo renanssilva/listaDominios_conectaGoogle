@@ -1,7 +1,9 @@
-from flask import Flask, render_template, url_for, redirect, session
 
+# from flask import Flask, render_template, url_for, redirect, session
+from flask import Flask, render_template
 import httplib2
 from googleapiclient import discovery
+
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import run_flow
@@ -26,6 +28,7 @@ def authorize_credentials():
         credentials = run_flow(flow, STORAGE, http=http)
     return credentials
 
+
 def get_google_contacts():
     credentials = authorize_credentials()
     http = credentials.authorize(httplib2.Http())
@@ -33,14 +36,37 @@ def get_google_contacts():
     service = discovery.build('people', 'v1', http=http, discoveryServiceUrl=discoveryUrl)
     results = service.otherContacts().list(readMask='emailAddresses', pageSize=1000).execute()
     values = results['otherContacts']
-    list_emails = []
-    for email in values:
-        list_emails.append(email['emailAddresses'][0]['value'])
-    return sorted(list_emails)
+    print(len(values))
 
-def logout_goole():
-    credentials = STORAGE.delete()
-    return credentials
+    values_list = []
+
+    for email in values:
+        values_list.append(email['emailAddresses'][0]['value'])
+
+    print(values_list)
+
+    return values_list
+
+
+def format_googleContacts(contactList: list):
+    dictContact = {}
+
+    for addressesEmail in contactList:
+        domain = addressesEmail.split('@')[1]
+
+        if not dictContact:
+            dictContact[domain] = [addressesEmail]
+        elif domain in dictContact.keys():
+            dictContact[domain] += [addressesEmail]
+        else:
+            dictContact[domain] = [addressesEmail]
+
+    orderDictContact = sorted(dictContact.items())
+
+    return dict(orderDictContact)
+
+
+# authorize_credentials()
 
 # Default route
 @app.route('/')
@@ -51,23 +77,20 @@ def index():
 # Google login route
 @app.route('/login')
 def google_login():
-    credentials = None
 
-    if not credentials:
-        authorize_credentials()
-    return render_template('logado.html', enable=True)
+    authorize_credentials()
 
+    contacts = get_google_contacts()
 
-# Google authorize route
-# @app.route('/contatos')
-# def google_authorize(*args):
-#     emailAddresses = get_google_contacts()
-#     return f"{emailAddresses}"
+    formatContacts = format_googleContacts(contacts)
+
+    return render_template('logado.html', enable=True, contacts=formatContacts)
+
 
 @app.route('/logout')
-def logout():
-    pass
-    return 'logout'
+def logout_goole():
+    STORAGE.delete()
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

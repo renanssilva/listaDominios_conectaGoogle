@@ -145,12 +145,18 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 3rem 20%;
-    
+    border-top: 2px solid #dadada;
+    padding-top: 10px;
 }
 
 .dominio, .contatos {
-    align-self: center;
+    align-self: start;
 }
+
+.contatos p {
+    padding: 5px;
+}
+
 
 @media(max-width: 400px) {
     .foto_perfil {

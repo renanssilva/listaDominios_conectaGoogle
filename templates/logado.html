@@ -3,83 +3,21 @@
 
     <main class="container_conta">
         <div class="container_box">
-            <section class="dominios">
-                <h2 class="dominio">dominio.com.br</h2>
-                <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                </div>
-                
-            </section>
-            <section class="dominios">
-                <h2 class="dominio">dominio2.com.br</h2>
-                <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                </div>
-            </section>
+
+            {% for key in contacts %}
 
             <section class="dominios">
-                <h2 class="dominio">dominio2.com.br</h2>
+                <h2 class="dominio">{{ key }}</h2>
                 <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                </div>
-            </section>
 
-            <section class="dominios">
-                <h2 class="dominio">dominio2.com.br</h2>
-                <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                </div>
-            </section>
+                    {% for value in contacts[key] %}
+                    <p>{{ value }}</p>
+                    {% endfor %}
 
-            <section class="dominios">
-                <h2 class="dominio">dominio2.com.br</h2>
-                <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
                 </div>
             </section>
+            {% endfor %}
 
-            <section class="dominios">
-                <h2 class="dominio">dominio2.com.br</h2>
-                <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                </div>
-            </section>
-
-            <section class="dominios">
-                <h2 class="dominio">dominio2.com.br</h2>
-                <div class="contatos">
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                    <p>blabla.com</p>    
-                    <p>tana@nina.com</p>
-                    <p>teste@teste.com</p>
-                </div>
-            </section>
         </div>
         
     </main>
