@@ -13,9 +13,7 @@ app = Flask(__name__)
 
 CLIENT_SECRET = 'credentials.json'
 SCOPE = 'https://www.googleapis.com/auth/contacts.other.readonly'
-STORAGE = Storage('credentials.storage')
-
-print(STORAGE)
+STORAGE = Storage('conecta-credentials-storage')
 
 
 def authorize_credentials():
@@ -36,14 +34,11 @@ def get_google_contacts():
     service = discovery.build('people', 'v1', http=http, discoveryServiceUrl=discoveryUrl)
     results = service.otherContacts().list(readMask='emailAddresses', pageSize=1000).execute()
     values = results['otherContacts']
-    print(len(values))
 
     values_list = []
 
     for email in values:
         values_list.append(email['emailAddresses'][0]['value'])
-
-    print(values_list)
 
     return values_list
 
