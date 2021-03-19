@@ -18,7 +18,7 @@
             <div class="container">
                 <h1 class="cabecalho_titulo">Contatos</h1>
                 <nav class="cabecalho_nav">
-                    <a class="cabecalho_nav__link" href="#">Home</a>
+<!--                    <a class="cabecalho_nav__link" href="#">Home</a>-->
                     <div class="cabecalho_dropdown">
                         <button class="cabecalho_nav__link___login" >
                             <img class="foto_perfil"  src="{{ url_for('static', filename='/images/avatar.png') }}" alt="foto de perfil">
@@ -40,7 +40,7 @@
             <div class="container">
                 <h1 class="cabecalho_titulo">Contatos</h1>
                 <nav class="cabecalho_nav">
-                    <a class="cabecalho_nav__link" href="#">Home</a>
+<!--                    <a class="cabecalho_nav__link" href="#">Home</a>-->
                     <a class="cabecalho_nav__link___login" href="logado.html">--Login--</a>
                 </nav>
             </div>
@@ -49,6 +49,20 @@
     {% endif %}
 
     {% block conteudo %} {% endblock %}
+
+    <footer class="my_footer">
+        <span class="about_me">Who I'm</span>
+        <div class="botoes">
+            <button class="my_contact">
+                <img class="icone_google" src="{{ url_for('static', filename='/images/icone_github.png') }}"  alt="ícone do google">
+                <p class="login_google" ><a href="https://github.com/renanssilva">Check my GitHub</a></p>
+            </button>
+            <button class="my_contact">
+                <img class="icone_google" src="{{ url_for('static', filename='/images/icone_linkedin.png') }}"  alt="ícone do google">
+                <p class="login_google" ><a href="https://www.linkedin.com/in/renansoares-dev/">Check my linkedin</a></p>
+            </button>
+        </div>
+    </footer>
 
 </body>
 </html>

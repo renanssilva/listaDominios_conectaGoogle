@@ -157,6 +157,37 @@ body {
     padding: 5px;
 }
 
+.my_footer {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    height: 90px;
+    margin: 2%;
+    align-items: center;
+}
+.about_me {
+    margin-left: 4%;
+}
+.botoes {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-right: 18%;
+}
+.my_contact {
+    border: none;
+    margin-right: 5%;
+    margin-left: 5%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.my_contact:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    box-shadow: 1px 1px 1px 1px #f4f4f4;
+}
 
 @media(max-width: 400px) {
     .foto_perfil {
@@ -171,6 +202,13 @@ body {
 
     .cabecalho {
         height: 7rem;
+    }
+
+    .my_contact {
+        flex-wrap: wrap;
+    }
+    .botoes p {
+        display: none;
     }
 }
 
