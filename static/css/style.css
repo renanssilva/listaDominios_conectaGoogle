@@ -1,5 +1,10 @@
+* {
+    text-decoration:none;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 90px;
 }
 
 .cabecalho {
@@ -80,6 +85,7 @@ body {
 
 .icone_google {
     width: 2rem;
+    padding-right: 7px;
 }
 
 /* Página logada */
@@ -139,12 +145,21 @@ body {
     justify-content: space-around;
 }
 
+.campos {
+    display: flex;
+
+    font-size: 24px;
+    font-weight: 700;
+    justify-content: space-between;
+    margin: -30px 20% 15px 20%;
+}
+
 
 .dominios {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 3rem 20%;
+    margin: 1rem 20%;
     border-top: 2px solid #dadada;
     padding-top: 10px;
 }
@@ -160,10 +175,13 @@ body {
 .my_footer {
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
     height: 90px;
-    margin: 2%;
     align-items: center;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
 }
 .about_me {
     margin-left: 4%;

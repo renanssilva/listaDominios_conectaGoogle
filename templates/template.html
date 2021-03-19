@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos</title>
+    <title>Your Contacts</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
 
@@ -16,7 +16,7 @@
     {% if enable %}
         <header class="cabecalho">
             <div class="container">
-                <h1 class="cabecalho_titulo">Contatos</h1>
+                <h1 class="cabecalho_titulo">Your Contacts</h1>
                 <nav class="cabecalho_nav">
 <!--                    <a class="cabecalho_nav__link" href="#">Home</a>-->
                     <div class="cabecalho_dropdown">
@@ -25,9 +25,6 @@
                         </button>
 
                         <div class="cabecalho_dropdown__conteudo">
-                            <h2 class="seunome">Usuário</h2>
-                            <h3 class="seuemail">usuario@email.com</h3>
-<!--                            <h3 class="logout"><a href="index.html">Sair</a></h3>-->
                             <h3 class="logout"><a href="{{ url_for('logout_goole') }}">Sair</a></h3>
                         </div>
                     </div>
@@ -38,7 +35,7 @@
     {% else %}
         <header class="cabecalho">
             <div class="container">
-                <h1 class="cabecalho_titulo">Contatos</h1>
+                <h1 class="cabecalho_titulo">Your Contacts</h1>
                 <nav class="cabecalho_nav">
                 </nav>
             </div>
